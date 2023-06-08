@@ -1,3 +1,85 @@
+/********************* custome css **************/
+
+.card {
+    border-radius: 0;
+    border: none;
+    height: 100%;
+    font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+
+  .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 16px;
+  }
+
+  .card-body i {
+    margin-right: 5px;
+  }
+  .card:hover {
+    transform: scale(1.02);
+    color: #000;
+  }
+
+  .justified-text {
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+  }
+  
+  .header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity and color as needed */
+    z-index: 1;
+  }
+  
+  .header-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+
+
+  /***********************************************/
+
+
+
+
+
 /********** Template CSS **********/
 :root {
     --primary: #00B98E;
