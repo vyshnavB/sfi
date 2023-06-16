@@ -90,10 +90,44 @@ align-content: start;
     background-color: #EFFDF5;
     opacity: 0.5;
 } */
+/* Add the following media query */
+@media (max-width: 768px) {
+    .video-container {
+      padding-bottom: 100%; /* Adjust the aspect ratio for mobile devices */
+    }
+  }
 
+.footer .icon{
 
+    padding: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #E5CCC9 !important;
+    border-radius: 50px;
+    border: 1px dashed var(--primary) !important;
 
-
+}
+.trans-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  #google_translate_element {
+    margin-right: 10px;
+  }
+  
+  .flag-icons img {
+    margin-right: 5px;
+  }
+  
+  .flag-icons img:last-child {
+    margin-right: 0;
+  }
   
   /***********************************************/
 
