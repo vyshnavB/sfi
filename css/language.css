@@ -1,0 +1,138 @@
+#google_translate_element select{
+    /* background:#f6edfd; */
+    color: #ffffff;
+    border: none;
+    border-radius:3px;
+    padding:6px 8px;
+    background: #07a2da;
+    font-size: 15px;
+    width: 160px;
+    font-weight: 600;
+    }
+    #google_translate_element select option{
+        color: black;
+        width: 160px;
+    }
+
+    #google_translate_element select:hover{
+        color: rgb(0, 0, 0);
+    }
+
+    
+    /*google translate link | logo */
+      .goog-logo-link{
+      display:none!important;
+      }
+    .goog-te-gadget{
+    color:transparent!important;
+    }
+    
+    /* google translate banner-frame */
+    
+    .goog-te-banner-frame{
+    display:none !important;
+    }
+    
+    #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+   .goog-text-highlight { background: none !important; box-shadow: none !important;}
+    
+    body{top:0!important;} 
+   
+           
+           option 
+                   {
+                       background-color: #fff !important;
+                       
+                   }
+           .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover
+                   {
+                       color:transparent;
+                       background-color: transparent;
+                       border-color:transparent;
+                   }
+           .bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*=span], .bootstrap-select.btn-group[class*=col-]
+                   {
+                       margin-bottom:3px;
+                   }
+          
+           
+           .selectpicker, .bootstrap-select  
+                   {
+                       padding:1px;
+                   }
+           .bootstrap-select>.btn 
+                   {
+                       width: 100%;
+                       padding-right: 0;
+                       background:transparent;
+                       border:none;
+                   }
+   
+           .bootstrap-select>.btn:hover 
+                   {
+                       background:transparent;
+                       border:none;
+                   }
+           .bootstrap-select.btn-group .dropdown-menu
+                   {
+                       border:none;
+                       box-shadow:none;
+                   }
+           .open>.dropdown-menu
+                   {
+                       display:block!important;
+                       overflow: visible!important;
+                       min-height: 7px!important;
+                   }
+           .goog-logo-link, .glyphicon 
+                   {
+                       display:none !important;
+                   }
+          
+           .btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default
+                   {
+                       background-color:transparent;
+                       border-color:transparent;
+                       box-shadow:none;
+                   }
+           .dropdown-menu
+                   {
+                       font-size:20px;
+                       background-color:transparent;
+                       border:none!important;
+                   }
+           .dropdown-menu>li>a
+                   {
+                       padding:2px;
+                       border:none!important;
+                   }
+            .dropdown-menu>li>a:hover, .selected
+                   {
+                       background-color: transparent!important;
+                       border:none!important;
+                   }
+           .trans-section .btn
+                   {
+                       border:none;
+                   }
+           .btn-group.open .dropdown-toggle
+                   {
+                       box-shadow:none;
+                   }
+           
+           .VIpgJd-ZVi9od-ORHb-OEVmcd{
+                   display: none;
+                   height: 0px;
+                  }
+   
+                  .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+                   display: none;
+                  }	
+
+                  .VIpgJd-ZVi9od-l4eHX-hSRGPd, .VIpgJd-ZVi9od-l4eHX-hSRGPd:link{
+                    display: none;
+                  }
+                  #google_translate_element{
+                    background:none;
+                    width: 140px;
+                  }
