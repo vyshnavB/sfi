@@ -93,7 +93,7 @@ align-content: start;
 /* Add the following media query */
 @media (max-width: 768px) {
     .video-container {
-      padding-bottom: 100%; /* Adjust the aspect ratio for mobile devices */
+      padding-bottom: 105%; /* Adjust the aspect ratio for mobile devices */
     }
   }
 
@@ -410,13 +410,14 @@ align-content: start;
 
 /*** Category ***/
 .cat-item div {
-    background: #FFFFFF;
+    background: #8b91ad;
     border: 1px dashed rgba(0, 185, 142, .3);
     transition: .5s;
+    color: #fff;
 }
 
 .cat-item:hover div {
-    background: var(--primary);
+    background: var(--secondary);
     border-color: transparent;
 }
 
