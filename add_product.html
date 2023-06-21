@@ -1,0 +1,33 @@
+<?php
+// Start the session
+session_start();
+
+// Check if the admin session variable is not set
+if (!isset($_SESSION['admin'])) {
+  // Redirect to the login page
+  header('Location: login.html');
+  exit;
+}
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Product - Fish</title>
+</head>
+<body>
+  <h2>Add Product - Fish</h2>
+  <form action="add_product.php" method="POST" enctype="multipart/form-data">
+    <label for="fish_name">Fish Name:</label>
+    <input type="text" name="fish_name" id="fish_name" required>
+
+    <label for="fish_image">Fish Image:</label>
+    <input type="file" name="fish_image" id="fish_image" accept="image/*" required>
+
+    <input type="submit" value="Add Fish">
+  </form>
+
+  <a href="logout.php">Logout</a>
+</body>
+</html>
