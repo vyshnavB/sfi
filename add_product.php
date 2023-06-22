@@ -10,10 +10,14 @@ if (!isset($_SESSION['admin'])) {
 }
 
 // Database connection parameters
-$hostname = 'localhost'; // Replace 'localhost' with the actual hostname or IP address
-$username = 'sfidatabase';
+$hostname = '127.0.0.1';  // Replace 'your_host' with the actual hostname or IP address
+$username = 'u895526204_database_sfi';
 $password = 'brNa7NrRh1__UA0V';
-$database = 'sfi_db';
+$database = 'u895526204_db_sfi';
+// $hostname = 'localhost'; // Replace 'localhost' with the actual hostname or IP address
+// $username = 'sfidatabase';
+// $password = 'brNa7NrRh1__UA0V';
+// $database = 'sfi_db';
 
 // Handle delete request
 if (isset($_GET['delete_id'])) {
