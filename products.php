@@ -153,6 +153,50 @@ echo '</div>';
 echo '<div class="row g-4">';
 echo '';
 echo '';
+
+// Establish a database connection
+$hostname = '';  // Replace 'your_host' with the actual hostname or IP address
+$username = 'sfidatabase';
+$password = 'brNa7NrRh1__UA0V';
+$database = 'sfi_db';
+
+$conn = new mysqli($hostname, $username, $password, $database);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Retrieve the fish records from the "products" table
+$sql = "SELECT * FROM products";
+$result = $conn->query($sql);
+
+// Display the fish names and images
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    $fishName = $row['name'];
+    $fishImage = $row['image'];
+   
+
+    echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+    echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+    echo '<div class="rounded p-4">';
+    echo '<div class="icon mb-3">';
+    echo '<img class="img-fluid" src="' . $fishImage . '" alt="Icon">';
+    echo '</div>';
+    echo '<h6>' . $fishName . '</h6>';
+    echo '<div class="p-icon" style="font-size: 14px;">';
+    echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+    echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+    echo '</div>';
+    echo '</div>';
+    echo '</a>';
+    echo '</div>';
+  }
+} else {
+  echo "";
+}
+
+$conn->close();
+
 echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
 echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
 echo '<div class="rounded p-4">';
@@ -312,22 +356,22 @@ echo '</div>';
 echo '</a>';
 echo '</div>';
 echo '';
-echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-echo '<div class="rounded p-4">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/11.jpg" alt="Icon">';
-echo '</div>';
-echo '<h6>GIANT THREADFISH</h6>';
-echo '<span style="font-size: 14px;">Ikan Kuro (Eleutheronema tetradactylum)</span>';
-echo '<div class="p-icon" style="font-size: 14px;">';
-echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-echo '</div>';
-echo '</div>';
-echo '</a>';
-echo '</div>';
-echo '';
+// echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+// echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+// echo '<div class="rounded p-4">';
+// echo '<div class="icon mb-3">';
+// echo '<img class="img-fluid" src="img/PRODUCTS/11.jpg" alt="Icon">';
+// echo '</div>';
+// echo '<h6>GIANT THREADFISH</h6>';
+// echo '<span style="font-size: 14px;">Ikan Kuro (Eleutheronema tetradactylum)</span>';
+// echo '<div class="p-icon" style="font-size: 14px;">';
+// echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+// echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+// echo '</div>';
+// echo '</div>';
+// echo '</a>';
+// echo '</div>';
+// echo '';
 echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
 echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
 echo '<div class="rounded p-4">';
@@ -344,53 +388,57 @@ echo '</div>';
 echo '</a>';
 echo '</div>';
 echo '';
-echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-echo '<div class="rounded p-4">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/13.jpg" alt="Icon">';
-echo '</div>';
-echo '<h6>LEOPARD CORAL TROUT</h6>';
-echo '<span style="font-size: 14px;">Ikan Kerapu Lodi (Plectropomus sp)</span>';
-echo '<div class="p-icon" style="font-size: 14px;">';
-echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-echo '</div>';
-echo '</div>';
-echo '</a>';
-echo '</div>';
-echo '';
-echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-echo '<div class="rounded p-4">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/14.jpg" alt="Icon">';
-echo '</div>';
-echo '<h6>BARRED CHEEK CORAL TROUT</h6>';
-echo '<span style="font-size: 14px;">Ikan Kerapu Sunu (Plectropomus leopardus)</span>';
-echo '<div class="p-icon" style="font-size: 14px;">';
-echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-echo '</div>';
-echo '</div>';
-echo '</a>';
-echo '</div>';
-echo '';
-echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-echo '<div class="rounded p-4">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/15.jpg" alt="Icon">';
-echo '</div>';
-echo '<h6>SALMON</h6>';
-echo '<span style="font-size: 14px;">Ikan Salmon (Oncorhynchus sp)</span>';
-echo '<div class="p-icon" style="font-size: 14px;">';
-echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-echo '</div>';
-echo '</div>';
-echo '</a>';
-echo '</div>';
+
+// echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+// echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+// echo '<div class="rounded p-4">';
+// echo '<div class="icon mb-3">';
+// echo '<img class="img-fluid" src="img/PRODUCTS/13.jpg" alt="Icon">';
+// echo '</div>';
+// echo '<h6>LEOPARD CORAL TROUT</h6>';
+// echo '<span style="font-size: 14px;">Ikan Kerapu Lodi (Plectropomus sp)</span>';
+// echo '<div class="p-icon" style="font-size: 14px;">';
+// echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+// echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+// echo '</div>';
+// echo '</div>';
+// echo '</a>';
+// echo '</div>';
+// echo '';
+
+// echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+// echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+// echo '<div class="rounded p-4">';
+// echo '<div class="icon mb-3">';
+// echo '<img class="img-fluid" src="img/PRODUCTS/14.jpg" alt="Icon">';
+// echo '</div>';
+// echo '<h6>BARRED CHEEK CORAL TROUT</h6>';
+// echo '<span style="font-size: 14px;">Ikan Kerapu Sunu (Plectropomus leopardus)</span>';
+// echo '<div class="p-icon" style="font-size: 14px;">';
+// echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+// echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+// echo '</div>';
+// echo '</div>';
+// echo '</a>';
+// echo '</div>';
+// echo '';
+
+// echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+// echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+// echo '<div class="rounded p-4">';
+// echo '<div class="icon mb-3">';
+// echo '<img class="img-fluid" src="img/PRODUCTS/15.jpg" alt="Icon">';
+// echo '</div>';
+// echo '<h6>SALMON</h6>';
+// echo '<span style="font-size: 14px;">Ikan Salmon (Oncorhynchus sp)</span>';
+// echo '<div class="p-icon" style="font-size: 14px;">';
+// echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+// echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+// echo '</div>';
+// echo '</div>';
+// echo '</a>';
+// echo '</div>';
+
 echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
 echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
 echo '<div class="rounded p-4">';
@@ -439,22 +487,24 @@ echo '</div>';
 echo '</a>';
 echo '</div>';
 echo '';
-echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-echo '<div class="rounded p-4">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/19.jpg" alt="Icon">';
-echo '</div>';
-echo '<h6>DORY FISH</h6>';
-echo '<span style="font-size: 14px;">Ikan Patin (Pangasius pangasius)</span>';
-echo '<div class="p-icon" style="font-size: 14px;">';
-echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-echo '</div>';
-echo '</div>';
-echo '</a>';
-echo '</div>';
-echo '';
+
+// echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+// echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+// echo '<div class="rounded p-4">';
+// echo '<div class="icon mb-3">';
+// echo '<img class="img-fluid" src="img/PRODUCTS/19.jpg" alt="Icon">';
+// echo '</div>';
+// echo '<h6>DORY FISH</h6>';
+// echo '<span style="font-size: 14px;">Ikan Patin (Pangasius pangasius)</span>';
+// echo '<div class="p-icon" style="font-size: 14px;">';
+// echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+// echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+// echo '</div>';
+// echo '</div>';
+// echo '</a>';
+// echo '</div>';
+// echo '';
+
 echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
 echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
 echo '<div class="rounded p-4">';
@@ -471,22 +521,23 @@ echo '</div>';
 echo '</a>';
 echo '</div>';
 echo '';
-echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-echo '<div class="rounded p-4">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/21.jpg" alt="Icon">';
-echo '</div>';
-echo '<h6>SMALL THOOTED EMPERUR</h6>';
-echo '<span style="font-size: 14px;">Ikan Lencam (Lethrinus sp)</span>';
-echo '<div class="p-icon" style="font-size: 14px;">';
-echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-echo '</div>';
-echo '</div>';
-echo '</a>';
-echo '</div>';
-echo '';
+// echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+// echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+// echo '<div class="rounded p-4">';
+// echo '<div class="icon mb-3">';
+// echo '<img class="img-fluid" src="img/PRODUCTS/21.jpg" alt="Icon">';
+// echo '</div>';
+// echo '<h6>SMALL THOOTED EMPERUR</h6>';
+// echo '<span style="font-size: 14px;">Ikan Lencam (Lethrinus sp)</span>';
+// echo '<div class="p-icon" style="font-size: 14px;">';
+// echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+// echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+// echo '</div>';
+// echo '</div>';
+// echo '</a>';
+// echo '</div>';
+// echo '';
+
 echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
 echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
 echo '<div class="rounded p-4">';
@@ -595,21 +646,22 @@ echo '</div>';
 echo '</div>';
 echo '</a>';
 echo '</div>';
-echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-echo '<div class="rounded p-4">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/29.jpg" alt="Icon">';
-echo '</div>';
-echo '<h6>GOLDEN JACK</h6>';
-echo '<span style="font-size: 14px;">Ikan Kuwe (Charanx sp)</span>';
-echo '<div class="p-icon" style="font-size: 14px;">';
-echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-echo '</div>';
-echo '</div>';
-echo '</a>';
-echo '</div>';
+// echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+// echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+// echo '<div class="rounded p-4">';
+// echo '<div class="icon mb-3">';
+// echo '<img class="img-fluid" src="img/PRODUCTS/29.jpg" alt="Icon">';
+// echo '</div>';
+// echo '<h6>GOLDEN JACK</h6>';
+// echo '<span style="font-size: 14px;">Ikan Kuwe (Charanx sp)</span>';
+// echo '<div class="p-icon" style="font-size: 14px;">';
+// echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+// echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+// echo '</div>';
+// echo '</div>';
+// echo '</a>';
+// echo '</div>';
+
 echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
 echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
 echo '<div class="rounded p-4">';
@@ -786,27 +838,27 @@ echo '</div>';
 echo '';
 
 
+// echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
+// echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
+// echo '<div class="rounded p-4">';
+// echo '<div class="icon mb-3">';
+// echo '<img class="img-fluid" src="img/PRODUCTS/41.jpg" alt="Icon">';
+// echo '</div>';
+// echo '<h6>CHOMMEND WHINDOW SHELL</h6>';
+// echo '<span style="font-size: 14px;">Kerang Simping (Placuna placenta)</span>';
+// echo '<div class="p-icon" style="font-size: 14px;">';
+// echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
+// echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
+// echo '</div>';
+// echo '</div>';
+// echo '</a>';
+// echo '</div>';
+// echo '';
 echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
 echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
 echo '<div class="rounded p-4">';
 echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/41.jpg" alt="Icon">';
-echo '</div>';
-echo '<h6>CHOMMEND WHINDOW SHELL</h6>';
-echo '<span style="font-size: 14px;">Kerang Simping (Placuna placenta)</span>';
-echo '<div class="p-icon" style="font-size: 14px;">';
-echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-echo '</div>';
-echo '</div>';
-echo '</a>';
-echo '</div>';
-echo '';
-echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-echo '<div class="rounded p-4">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid" src="img/PRODUCTS/42.jpg" alt="Icon">';
+echo '<img class="img-fluid" src="img/PRODUCTS/babycalm.jpg" alt="Icon">';
 echo '</div>';
 echo '<h6>BABY CALM</h6>';
 echo '<div class="p-icon" style="font-size: 14px;">';
@@ -816,48 +868,7 @@ echo '</div>';
 echo '</div>';
 echo '</a>';
 echo '</div>';
-// Establish a database connection
-$hostname = '';  // Replace 'your_host' with the actual hostname or IP address
-$username = 'sfidatabase';
-$password = 'brNa7NrRh1__UA0V';
-$database = 'sfi_db';
 
-$conn = new mysqli($hostname, $username, $password, $database);
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-// Retrieve the fish records from the "products" table
-$sql = "SELECT * FROM products";
-$result = $conn->query($sql);
-
-// Display the fish names and images
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    $fishName = $row['name'];
-    $fishImage = $row['image'];
-   
-
-    echo '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">';
-    echo '<a class="cat-item d-block bg-light text-center rounded p-3" href="">';
-    echo '<div class="rounded p-4">';
-    echo '<div class="icon mb-3">';
-    echo '<img class="img-fluid" src="' . $fishImage . '" alt="Icon">';
-    echo '</div>';
-    echo '<h6>' . $fishName . '</h6>';
-    echo '<div class="p-icon" style="font-size: 14px;">';
-    echo '<p ><i class="fas fa-map-marker-alt"></i> &nbsp; origin : Indonesia </p>';
-    echo '<p ><i class="fas fa-suitcase"></i> &nbsp; packing : MC, etc (as per requested) </p>';
-    echo '</div>';
-    echo '</div>';
-    echo '</a>';
-    echo '</div>';
-  }
-} else {
-  echo "No fish found.";
-}
-
-$conn->close();
 
 
 
@@ -879,17 +890,17 @@ echo '';
 echo '<!-- Footer Start -->';
 echo '<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">';
 echo '<div class="container py-5">';
-echo '<div class="row g-5">';
+echo '<div class="row footer g-5">';
 echo '<div class="col-lg-3 col-md-6 ">';
-echo '<div class="icon mb-3">';
-echo '<img class="img-fluid " src="img/logo/sfi logo.png" alt="Icon">';
+echo '<div class="icon  mb-3">';
+echo '<img class="img-fluid " src="img\logo\png_20230621_151751_0000.png" alt="Icon">';
 echo '</div>';
 echo '<div class="d-flex" style="padding-left: 60px;">';
 echo '';
 echo '<a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ptsunifathi_indonesia/"><i class="fab fa-instagram"></i></a>';
 echo '<a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100093461989142"><i class="fab fa-facebook"></i></a>';
 echo '<a class="btn btn-outline-light btn-social" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>';
-echo '<a class="btn btn-outline-light btn-social" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>';
+echo '<a class="btn btn-outline-light btn-social" href="https://wa.me/6281329410041"><i class="fab fa-whatsapp"></i></a>';
 echo '';
 echo '';
 echo '</div>';
@@ -911,7 +922,7 @@ echo '<div class="col-lg-3 col-md-6">';
 echo '<h5 class="text-white mb-4">Quick Links</h5>';
 echo '<a class="btn btn-link text-white-50" href="about.php">About Us</a>';
 echo '<a class="btn btn-link text-white-50" href="contact.php">Contact Us</a>';
-echo '<a class="btn btn-link text-white-50" href="products.php">Our Services</a>';
+echo '<a class="btn btn-link text-white-50" href="products.php">Products</a>';
 echo '<a class="btn btn-link text-white-50" href="404.php">Privacy Policy</a>';
 echo '<a class="btn btn-link text-white-50" href="404.php">Terms & Condition</a>';
 echo '</div>';
